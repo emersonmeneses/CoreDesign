@@ -1,11 +1,11 @@
-F<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfólio Core Designer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -14,7 +14,8 @@ F<!DOCTYPE html>
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
 }
-  /* TEXTO CORE (digitando) */
+
+/* ================= TEXTO CORE ANIMAÇÃO ================= */
 .texto-core{
   display:inline-block;
   font-size:clamp(28px, 3.5vw, 40px);
@@ -25,7 +26,6 @@ F<!DOCTYPE html>
   width:0;
 }
 
-/* TEXTO EXPLICAÇÃO escondido inicialmente */
 .explicacao-core{
   margin-top:20px;
   font-size:18px;
@@ -35,7 +35,6 @@ F<!DOCTYPE html>
   transform:translateY(40px);
 }
 
-/* ATIVA ANIMAÇÕES */
 .animar-core .texto-core{
   animation:digitar 2s steps(4) forwards, piscar 0.8s infinite;
 }
@@ -45,29 +44,36 @@ F<!DOCTYPE html>
   animation-delay:1.2s;
 }
 
-/* DIGITAÇÃO */
 @keyframes digitar{
   from{width:0;}
   to{width:4ch;}
 }
 
-/* CURSOR */
 @keyframes piscar{
   50%{border-color:transparent;}
 }
 
-/* TEXTO SUBINDO SUAVE */
 @keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
 }
-  .cards-core{
+
+/* ================= TITULO CORE ================= */
+.titulo-core{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.texto-branco{
+  display:block;
+  font-size:clamp(48px,6vw,72px);
+  font-weight:800;
+  color:#ffffff;
+  line-height:1.1;
+}
+
+/* ================= CARDS CORE ================= */
+.cards-core{
   margin-top:60px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -79,7 +85,6 @@ F<!DOCTYPE html>
   border:1px solid rgba(59,130,246,0.4);
   border-radius:18px;
   padding:28px 22px;
-  text-align:left;
   position:relative;
   overflow:hidden;
   transition:all .4s ease;
@@ -87,7 +92,6 @@ F<!DOCTYPE html>
   opacity:0;
 }
 
-/* delay animado em sequência */
 .card-core:nth-child(1){animation-delay:.2s;}
 .card-core:nth-child(2){animation-delay:.4s;}
 .card-core:nth-child(3){animation-delay:.6s;}
@@ -107,45 +111,27 @@ F<!DOCTYPE html>
 }
 
 .card-core h3{
-  font-family:'Poppins','Montserrat',sans-serif;
   font-weight:800;
   font-size:22px;
-  line-height:1.3;
   color:#fff;
 }
 
-/* Hover efeito premium */
 .card-core:hover{
   transform:translateY(-8px) scale(1.02);
   box-shadow:0 20px 40px rgba(59,130,246,.25);
   border-color:#3B82F6;
 }
 
-/* animação */
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* Responsivo */
+/* RESPONSIVO */
 @media(max-width:1024px){
-  .cards-core{
-    grid-template-columns:repeat(2,1fr);
-  }
+  .cards-core{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .cards-core{grid-template-columns:1fr;}
 }
 
-@media(max-width:600px){
-  .cards-core{
-    grid-template-columns:1fr;
-  }
-}
-  .manifesto-section{
+/* ================= MANIFESTO ================= */
+.manifesto-section{
   background:#000;
   padding:80px 20px;
   display:flex;
@@ -165,52 +151,26 @@ F<!DOCTYPE html>
   box-shadow:0 0 30px rgba(59,130,246,0.4);
 }
 
-/* TEXTO SOBREPOSTO */
 .titulo-bemvindo{
   position:absolute;
-  top:-40px; /* metade fora */
+  top:-40px;
   left:30px;
-  font-family:'Poppins', 'Montserrat', sans-serif;
   font-weight:800;
-  font-size:clamp(48px, 6vw, 72px);
+  font-size:clamp(48px,6vw,72px);
   line-height:1.1;
   z-index:2;
   text-transform:uppercase;
 }
 
-.sejam{
-  display:block;
-  color:#ffffff;
-}
-
+.sejam{color:#fff;}
 .bemvindos{
-  display:block;
   color:#3B82F6;
   text-shadow:0 0 20px rgba(59,130,246,0.7);
 }
-  .imagem-manifesto{
-  width:100%;
-  max-width:900px;
-  margin:40px auto;
-  display:block;
-  border-radius:20px;
-  border:3px solid #2563eb;
-  box-shadow:0 0 40px rgba(37,99,235,0.9);
-  transition:0.4s;
-}
 
-.imagem-manifesto:hover{
-  transform:scale(1.02);
-  box-shadow:0 0 70px rgba(37,99,235,1);
-}
+/* ================= HERO ================= */
+body{background:#000;color:#fff;overflow-x:hidden;}
 
-body{
-  background:#000;
-  color:#fff;
-  overflow-x:hidden;
-}
-
-/* FUNDO FUTURISTA */
 .hero{
   height:100vh;
   background:url('bg-futurista.jpg') center/cover no-repeat;
@@ -234,51 +194,16 @@ body{
   100%{transform:scale(1.1);}
 }
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:800px;
-  animation:fadeUp 1.5s ease;
-}
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
-}
+.hero-content{position:relative;z-index:2;max-width:800px;}
 
 .logo{
-  width:250px;
-  height:250px;
-  border-radius:50%;
+  width:250px;height:250px;border-radius:50%;
   margin-bottom:25px;
   box-shadow:0 0 40px rgba(0,140,255,0.7);
-  animation:pulseGlow 3s infinite ease-in-out;
 }
 
-@keyframes pulseGlow{
-  0%{box-shadow:0 0 20px rgba(0,140,255,0.6);}
-  50%{box-shadow:0 0 60px rgba(0,140,255,1);}
-  100%{box-shadow:0 0 20px rgba(0,140,255,0.6);}
-}
-
-.hero h1{
-  font-size:3rem;
-  line-height:1.2;
-}
-
-.hero small{
-  position:absolute;
-  top:30px;
-  right:40px;
-  color:#93c5fd;
-  letter-spacing:2px;
-}
-
-.hero p{
-  margin:20px auto;
-  font-size:20px;
-  color:#e2e8f0;
-}
+.hero h1{font-size:3rem;line-height:1.2;}
+.hero p{margin:20px auto;font-size:20px;color:#e2e8f0;}
 
 .btn{
   display:inline-block;
@@ -297,23 +222,16 @@ body{
   box-shadow:0 0 25px rgba(37,99,235,0.9);
 }
 
-/* SEÇÕES */
-section{
-  padding:90px 10%;
-  background:#000;
-}
+/* ================= CARDS SERVIÇOS ================= */
+section{padding:90px 10%;}
 
-.titulo{
+.titulo-servicos{
   text-align:center;
-  margin-bottom:50px;
-}
-
-.titulo h2{
   font-size:2.5rem;
-  color:#3b82f6;
+  margin-bottom:40px;
+  color:#3B82F6;
 }
 
-/* CARDS */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -331,45 +249,11 @@ section{
   transform:translateY(40px);
 }
 
-.card.show{
-  opacity:1;
-  transform:translateY(0);
-}
+.card.show{opacity:1;transform:translateY(0);}
 
 .card:hover{
   transform:translateY(-10px);
   box-shadow:0 0 30px rgba(59,130,246,0.5);
-}
-
-/* MÉTODO CORE */
-.core-list{
-  max-width:700px;
-  margin:auto;
-  line-height:2.2;
-  font-size:22px;
-}
-
-.core-list span{
-  color:#3b82f6;
-  font-weight:700;
-}
-
-/* CONTATO */
-.contato{
-  text-align:center;
-}
-
-.numero{
-  font-size:32px;
-  color:#3b82f6;
-  margin:20px 0;
-}
-
-footer{
-  text-align:center;
-  padding:40px;
-  border-top:1px solid rgba(255,255,255,0.05);
-  color:#64748b;
 }
 </style>
 </head>
@@ -379,8 +263,6 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <div class="overlay"></div>
-  <small>bycoredesign 2026-2030</small>
-
   <div class="hero-content">
     <img src="logo-core.jpeg" class="logo">
     <h1>Portfolio<br>Core Designer</h1>
@@ -389,23 +271,19 @@ footer{
   </div>
 </section>
 
-<section id="manifesto">
-
-  <!-- IMAGEM GRANDE DO MANIFESTO -->
-
-  <section class="manifesto-section">
+<!-- MANIFESTO -->
+<section id="manifesto" class="manifesto-section">
   <div class="manifesto-container">
-    
     <h1 class="titulo-bemvindo">
       <span class="sejam">Sejam</span>
       <span class="bemvindos">Bem Vindos</span>
     </h1>
-
-    <img src="manifesto.jpeg" alt="Manifesto" class="manifesto-img">
-
+    <img src="manifesto.jpeg" class="manifesto-img">
   </div>
 </section>
+
 <h2 class="titulo-servicos">Serviços</h2>
+<section>
   <div class="cards">
     <div class="card">O fim do design “bonitinho”</div>
     <div class="card">Design como ferramenta de autoridade</div>
@@ -417,60 +295,29 @@ footer{
 </section>
 
 <!-- MÉTODO CORE -->
-<section id="metodo-core" class="metodo-core">
-  <div class="core-container">
-    
-    <h1 class="titulo-core">
-      <span class="texto-branco">o porque do nome</span>
-      <span class="texto-core">core</span>
-    </h1>
+<section id="metodo-core">
+  <h1 class="titulo-core">
+    <span class="texto-branco">o porque do nome</span>
+    <span class="texto-core">core</span>
+  </h1>
 
-    <p class="explicacao-core">
-      CoreDesign nasce do “Core” — o centro, a essência, o núcleo.<br>
-      Porque antes da estética, existe a base.<br>
-      Antes da arte, existe a estratégia.<br>
-      Criamos do centro para fora.
-    </p>
+  <p class="explicacao-core">
+    CoreDesign nasce do “Core” — o centro, a essência, o núcleo.<br>
+    Porque antes da estética, existe a base.<br>
+    Antes da arte, existe a estratégia.<br>
+    Criamos do centro para fora.
+  </p>
 
-    <!-- AQUI ENTRA -->
-    <div class="cards-core">
-      <div class="card-core">
-        <h3>C – Clareza de posicionamento</h3>
-      </div>
-
-      <div class="card-core">
-        <h3>O – Organização visual</h3>
-      </div>
-
-      <div class="card-core">
-        <h3>R – Relevância estratégica</h3>
-      </div>
-
-      <div class="card-core">
-        <h3>E – Expansão e conversão</h3>
-      </div>
-    </div>
-
+  <div class="cards-core">
+    <div class="card-core"><h3>C – Clareza de posicionamento</h3></div>
+    <div class="card-core"><h3>O – Organização visual</h3></div>
+    <div class="card-core"><h3>R – Relevância estratégica</h3></div>
+    <div class="card-core"><h3>E – Expansão e conversão</h3></div>
   </div>
 </section>
-
-<!-- CONTATO -->
-<section class="contato">
-  <div class="titulo">
-    <h2>Contato</h2>
-  </div>
-
-  <p class="numero">(79) 99819-7985</p>
-  <a class="btn">Quero construir minha marca</a>
-</section>
-
-<footer>
-© 2026 Portfólio Core Designer — bycoredesign 2026-2030
-</footer>
 
 <script>
 const cards = document.querySelectorAll('.card');
-
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -478,24 +325,22 @@ const observer = new IntersectionObserver(entries=>{
     }
   });
 });
-
 cards.forEach(card=>observer.observe(card));
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const secao = document.getElementById("secao-core");
 
-  const observer = new IntersectionObserver((entries) => {
+document.addEventListener("DOMContentLoaded", function() {
+  const secao = document.getElementById("metodo-core");
+  const observerCore = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         secao.classList.add("animar-core");
-        observer.unobserve(secao);
+        observerCore.unobserve(secao);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.4 });
 
-  observer.observe(secao);
+  observerCore.observe(secao);
 });
 </script>
+
 </body>
 </html>
