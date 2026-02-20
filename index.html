@@ -291,6 +291,34 @@
   color: #000;
   opacity: 0.7;
 }
+  /* ================= RESPONSIVO MOBILE ================= */
+@media (max-width: 768px) {
+
+  .titulo-boas-vindas {
+    font-size: 42px !important;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .titulo-boas-vindas span.azul {
+    display: block;
+  }
+
+  .imagem-manifesto {
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .btn-explorar {
+    width: 80%;
+    font-size: 16px;
+  }
+}
 
 /* ================= HERO ================= */
 body{background:#000;color:#fff;overflow-x:hidden;}
@@ -329,21 +357,20 @@ body{background:#000;color:#fff;overflow-x:hidden;}
 .hero h1{font-size:3rem;line-height:1.2;}
 .hero p{margin:20px auto;font-size:20px;color:#e2e8f0;}
 
-.btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:15px 40px;
-  border-radius:40px;
-  background:linear-gradient(45deg,#2563eb,#1e3a8a);
-  text-decoration:none;
-  color:#fff;
-  font-weight:600;
-  transition:.3s;
+.btn-explorar {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-.btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 25px rgba(37,99,235,0.9);
+.btn-explorar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(59,130,246,0.4);
 }
 
 /* ================= CARDS SERVIÇOS ================= */
@@ -391,7 +418,9 @@ section{padding:90px 10%;}
     <img src="logo-core.jpeg" class="logo">
     <h1>Core Designer</h1>
     <p>Na CoreDesign, o Visual Design vai além da aparência. <br>Desenvolvemos identidades visuais que traduzem essência, propósito e posicionamento de marca, <br>unindo estratégia, estética e percepção para gerar autoridade e conexão real com o público..</p>
-    <a href="#manifesto" class="btn">Explorar Portfólio</a>
+    <a href="https://wa.me/5579998197985" target="_blank" class="btn-explorar">
+  Falar no WhatsApp
+</a>
   </div>
 </section>
 
