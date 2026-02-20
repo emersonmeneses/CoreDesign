@@ -63,7 +63,35 @@
 .animar-core .explicacao-core{
   animation: digitarTexto 4s steps(120) forwards, piscar 0.8s infinite;
 }
+/* ===== AJUSTE MOBILE BOAS VINDAS ===== */
+@media (max-width: 768px) {
 
+  .hero {
+    padding-bottom: 60px;
+  }
+
+  .btn-explorar {
+    margin-bottom: 40px; /* cria espaço abaixo do botão */
+  }
+
+  .titulo-boas-vindas {
+    font-size: 38px !important;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .titulo-boas-vindas span {
+    display: block;
+  }
+
+  .imagem-manifesto {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+}
 /* ================= TITULO CORE ================= */
 .titulo-core{
   text-align:center;
