@@ -14,6 +14,21 @@
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
 }
+  .imagem-manifesto{
+  width:100%;
+  max-width:900px;
+  margin:40px auto;
+  display:block;
+  border-radius:20px;
+  border:3px solid #2563eb;
+  box-shadow:0 0 40px rgba(37,99,235,0.9);
+  transition:0.4s;
+}
+
+.imagem-manifesto:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 70px rgba(37,99,235,1);
+}
 
 body{
   background:#000;
@@ -200,8 +215,11 @@ footer{
   </div>
 </section>
 
-<!-- MANIFESTO -->
 <section id="manifesto">
+
+  <!-- IMAGEM GRANDE DO MANIFESTO -->
+  <img src="manifesto.jpeg" class="imagem-manifesto" alt="Manifesto Core Design">
+
   <div class="titulo">
     <h2>Manifesto Estratégico</h2>
   </div>
