@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+F<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -13,6 +13,59 @@
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
+}
+  /* TEXTO CORE (digitando) */
+.texto-core{
+  display:inline-block;
+  font-size:clamp(28px, 3.5vw, 40px);
+  color:#3B82F6;
+  border-right:3px solid #3B82F6;
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+}
+
+/* TEXTO EXPLICAÇÃO escondido inicialmente */
+.explicacao-core{
+  margin-top:20px;
+  font-size:18px;
+  color:#ccc;
+  line-height:1.6;
+  opacity:0;
+  transform:translateY(40px);
+}
+
+/* ATIVA ANIMAÇÕES */
+.animar-core .texto-core{
+  animation:digitar 2s steps(4) forwards, piscar 0.8s infinite;
+}
+
+.animar-core .explicacao-core{
+  animation:fadeUp 1.2s ease forwards;
+  animation-delay:1.2s;
+}
+
+/* DIGITAÇÃO */
+@keyframes digitar{
+  from{width:0;}
+  to{width:4ch;}
+}
+
+/* CURSOR */
+@keyframes piscar{
+  50%{border-color:transparent;}
+}
+
+/* TEXTO SUBINDO SUAVE */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
   .cards-core{
   margin-top:60px;
@@ -428,6 +481,21 @@ const observer = new IntersectionObserver(entries=>{
 
 cards.forEach(card=>observer.observe(card));
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const secao = document.getElementById("secao-core");
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        secao.classList.add("animar-core");
+        observer.unobserve(secao);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(secao);
+});
+</script>
 </body>
 </html>
