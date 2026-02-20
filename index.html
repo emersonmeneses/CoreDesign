@@ -31,12 +31,10 @@
   font-size:18px;
   color:#ccc;
   line-height:1.6;
-  opacity:0;
-  transform:translateY(40px);
-}
-
-.animar-core .texto-core{
-  animation:digitar 2s steps(4) forwards, piscar 0.8s infinite;
+  white-space:pre-line;
+  overflow:hidden;
+  border-right:2px solid #3B82F6;
+  width:0;
 }
 
 .animar-core .explicacao-core{
@@ -56,6 +54,14 @@
 @keyframes fadeUp{
   from{opacity:0; transform:translateY(40px);}
   to{opacity:1; transform:translateY(0);}
+}
+  @keyframes digitarTexto{
+  from{ width:0; }
+  to{ width:100%; }
+}
+
+.animar-core .explicacao-core{
+  animation: digitarTexto 4s steps(120) forwards, piscar 0.8s infinite;
 }
 
 /* ================= TITULO CORE ================= */
