@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Cayo | Designer Estratégico</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #020617, #000000);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .efeito-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(0,102,255,0.08) 1px, transparent 1px);
+      background-size: 22px 22px;
+      z-index: -1;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h1, h2, h3 {
+      color: #3b82f6;
+      text-align: center;
+    }
+
+    p {
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    /* HERO */
+    .hero-topo {
+      position: relative;
+      height: 100vh;
+      background: url('bg-design.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+    }
+
+    .conteudo-hero {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .foto-perfil-topo {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #2563eb;
+      box-shadow: 0 0 30px rgba(37,99,235,0.6);
+      margin-bottom: 20px;
+    }
+
+    .conteudo-hero h1 {
+      font-size: 2.6rem;
+      color: #fff;
+    }
+
+    .conteudo-hero span {
+      color: #2563eb;
+    }
+
+    .btn-hero {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: linear-gradient(45deg,#2563eb,#1e3a8a);
+      color: #fff;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.4s;
+    }
+
+    .btn-hero:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #2563eb;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* DIFERENCIAIS */
+    .diferenciais {
+      display: grid;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .item {
+      background: #020617;
+      padding: 25px;
+      border-radius: 15px;
+      font-size: 18px;
+      border: 1px solid #2563eb;
+    }
+
+    /* SOBRE */
+    .container-sobre {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .foto-sobre {
+      width: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    .texto-sobre {
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #020617;
+      padding: 30px;
+      border-radius: 12px;
+      transition: 0.4s;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-align: center;
+      border: 1px solid #1e3a8a;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(37,99,235,0.4);
+    }
+
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #contato {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .container-sobre {
+        flex-direction: column;
+        text-align: center;
+      }
+      .texto-sobre {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="efeito-grid"></div>
+
+<!-- HERO -->
+<section class="hero-topo">
+  <div class="overlay"></div>
+  <div class="conteudo-hero">
+    <img src="CAYO.jpeg" alt="Foto Cayo Designer" class="foto-perfil-topo">
+    <h1>
+      Portfólio de Cayo <br>
+      <span>Designer Estratégico & Branding</span>
+    </h1>
+    <p>Transformando marcas comuns em marcas memoráveis através de estratégia, identidade visual e posicionamento.</p>
+    <a href="#contato" class="btn-hero">FALAR SOBRE SUA MARCA</a>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="diferenciais hidden">
+  <div class="item">✔ Design não é estética, é posicionamento estratégico</div>
+  <div class="item">✔ Construção de autoridade visual e identidade forte</div>
+  <div class="item">✔ Psicologia das cores aplicada à marca</div>
+  <div class="item">✔ Foco em crescimento, percepção de valor e conversão</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre">
+  <div class="container-sobre">
+    <img src="CAYO_DESIGN.jpeg" alt="Cayo Designer" class="foto-sobre">
+
+    <div class="texto-sobre hidden">
+      <h2>Sobre Mim</h2>
+      <p>
+        Sou designer focado em estratégia e construção de marca. Meu trabalho não é apenas criar artes bonitas, mas desenvolver posicionamento visual que gera autoridade, percepção de valor e crescimento real para as marcas.
+        <br><br>
+        Acredito que cada cor, tipografia e composição devem ter intenção. Por isso, aplico princípios de psicologia visual, hierarquia tipográfica e identidade estratégica em cada projeto desenvolvido.
+        <br><br>
+        Meu objetivo é transformar negócios comuns em marcas memoráveis, criando presença visual forte e alinhada ao propósito da empresa.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="hidden">
+  <h2>Serviços Estratégicos</h2>
+  <div class="cards">
+    <div class="card">🎨 Identidade Visual Estratégica</div>
+    <div class="card">📊 Posicionamento e Branding de Marca</div>
+    <div class="card">🧠 Psicologia das Cores aplicada ao Design</div>
+    <div class="card">📱 Design para Redes Sociais com foco em autoridade</div>
+    <div class="card">🚀 Criação de Posts Estratégicos para conversão</div>
+    <div class="card">📈 Construção visual para crescimento de marca</div>
+  </div>
+</section>
+
+<!-- MÉTODO CORE -->
+<section class="hidden">
+  <h2>Método CORE</h2>
+  <div class="cards">
+    <div class="card">C – Clareza de posicionamento da marca</div>
+    <div class="card">O – Organização visual estratégica</div>
+    <div class="card">R – Relevância e autoridade no mercado</div>
+    <div class="card">E – Expansão, percepção de valor e conversão</div>
+  </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section class="hidden">
+  <h2>Diferencial</h2>
+  <div class="cards">
+    <div class="card">✔ Design com estratégia, não apenas estética</div>
+    <div class="card">✔ Estudo de comportamento e percepção de marca</div>
+    <div class="card">✔ Foco em resultado e posicionamento</div>
+    <div class="card">✔ Construção de marcas com presença e autoridade</div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="hidden">
+  <h2>Contato</h2>
+  <p>Pronto para transformar sua marca em uma marca memorável?</p>
+  <a href="https://wa.me/5579998197985" class="btn-hero">WhatsApp</a>
+  <p>Telefone: (79) 99819-7985</p>
+  <p>© 2026 Portfólio de Cayo. Todos os direitos reservados.</p>
+</section>
+
+<script>
+const elements = document.querySelectorAll('.hidden');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
