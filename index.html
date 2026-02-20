@@ -1,196 +1,209 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Cayo | Core Designer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio Core Designer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-    body{
-      background:#000;
-      color:#fff;
-      overflow-x:hidden;
-    }
+body{
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
 
-    section{
-      padding:90px 10%;
-    }
+/* FUNDO FUTURISTA */
+.hero{
+  height:100vh;
+  background:url('bg-futurista.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
 
-    h1,h2,h3{
-      font-weight:700;
-      letter-spacing:1px;
-    }
+.overlay{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 30% 30%, rgba(0,119,255,0.5), transparent 60%),
+             radial-gradient(circle at 70% 70%, rgba(0,0,255,0.4), transparent 60%);
+  animation: moveBg 12s infinite alternate ease-in-out;
+}
 
-    p{
-      color:#cbd5e1;
-      line-height:1.8;
-      font-size:18px;
-    }
+@keyframes moveBg{
+  0%{transform:scale(1);}
+  100%{transform:scale(1.1);}
+}
 
-    /* TOPO AZUL */
-    .hero{
-      background:linear-gradient(135deg,#0a2cff,#020617);
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      position:relative;
-    }
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:800px;
+  animation:fadeUp 1.5s ease;
+}
 
-    .hero small{
-      position:absolute;
-      top:20px;
-      right:40px;
-      font-size:14px;
-      color:#93c5fd;
-      letter-spacing:2px;
-    }
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
 
-    .hero h1{
-      font-size:3rem;
-      line-height:1.3;
-    }
+.logo{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  margin-bottom:25px;
+  box-shadow:0 0 40px rgba(0,140,255,0.7);
+  animation:pulseGlow 3s infinite ease-in-out;
+}
 
-    .hero span{
-      color:#93c5fd;
-      display:block;
-      font-size:1.5rem;
-      margin-top:10px;
-    }
+@keyframes pulseGlow{
+  0%{box-shadow:0 0 20px rgba(0,140,255,0.6);}
+  50%{box-shadow:0 0 60px rgba(0,140,255,1);}
+  100%{box-shadow:0 0 20px rgba(0,140,255,0.6);}
+}
 
-    .hero p{
-      max-width:600px;
-      margin:25px auto;
-      font-size:20px;
-    }
+.hero h1{
+  font-size:3rem;
+  line-height:1.2;
+}
 
-    .btn{
-      display:inline-block;
-      padding:16px 40px;
-      border-radius:40px;
-      background:#fff;
-      color:#000;
-      font-weight:600;
-      text-decoration:none;
-      transition:.3s;
-    }
+.hero small{
+  position:absolute;
+  top:30px;
+  right:40px;
+  color:#93c5fd;
+  letter-spacing:2px;
+}
 
-    .btn:hover{
-      transform:scale(1.08);
-      box-shadow:0 0 25px rgba(255,255,255,0.3);
-    }
+.hero p{
+  margin:20px auto;
+  font-size:20px;
+  color:#e2e8f0;
+}
 
-    /* SEÇÕES PRETAS */
-    .dark{
-      background:#000;
-      border-top:1px solid rgba(255,255,255,0.05);
-    }
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:15px 40px;
+  border-radius:40px;
+  background:linear-gradient(45deg,#2563eb,#1e3a8a);
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition:.3s;
+}
 
-    .titulo{
-      text-align:center;
-      margin-bottom:40px;
-    }
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 25px rgba(37,99,235,0.9);
+}
 
-    .titulo h2{
-      font-size:2.4rem;
-      color:#3b82f6;
-    }
+/* SEÇÕES */
+section{
+  padding:90px 10%;
+  background:#000;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-      margin-top:30px;
-    }
+.titulo{
+  text-align:center;
+  margin-bottom:50px;
+}
 
-    .card{
-      background:#020617;
-      padding:30px;
-      border-radius:12px;
-      border:1px solid #1e3a8a;
-      transition:.4s;
-      text-align:center;
-    }
+.titulo h2{
+  font-size:2.5rem;
+  color:#3b82f6;
+}
 
-    .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 0 25px rgba(59,130,246,0.4);
-    }
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
 
-    .manifesto{
-      max-width:900px;
-      margin:auto;
-      text-align:center;
-    }
+.card{
+  background:#020617;
+  border:1px solid #1e3a8a;
+  padding:30px;
+  border-radius:15px;
+  transition:.4s;
+  text-align:center;
+  opacity:0;
+  transform:translateY(40px);
+}
 
-    .nome-core{
-      font-size:60px;
-      font-weight:700;
-      line-height:1.1;
-    }
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
-    .footer{
-      text-align:center;
-      padding:50px 10%;
-      border-top:1px solid rgba(255,255,255,0.05);
-      background:#000;
-    }
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(59,130,246,0.5);
+}
 
-    .footer small{
-      color:#64748b;
-      letter-spacing:2px;
-    }
+/* MÉTODO CORE */
+.core-list{
+  max-width:700px;
+  margin:auto;
+  line-height:2.2;
+  font-size:22px;
+}
 
-    @media(max-width:768px){
-      .hero h1{
-        font-size:2.2rem;
-      }
-      .nome-core{
-        font-size:40px;
-      }
-    }
-  </style>
+.core-list span{
+  color:#3b82f6;
+  font-weight:700;
+}
+
+/* CONTATO */
+.contato{
+  text-align:center;
+}
+
+.numero{
+  font-size:32px;
+  color:#3b82f6;
+  margin:20px 0;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  color:#64748b;
+}
+</style>
 </head>
+
 <body>
 
-<!-- HERO AZUL -->
+<!-- HERO -->
 <section class="hero">
+  <div class="overlay"></div>
   <small>bycoredesign 2026-2030</small>
-  <div>
-    <div class="nome-core">Portfolio<br>Core<br>designer</div>
+
+  <div class="hero-content">
+    <img src="logo-core.png" class="logo">
+    <h1>Portfolio<br>Core Designer</h1>
     <p>O portfólio não é só para mostrar artes bonitas. É para provar estratégia, identidade e construção de marca.</p>
-    <a href="#sobre" class="btn">Conheça o Portfólio</a>
-  </div>
-</section>
-
-<!-- SOBRE -->
-<section id="sobre" class="dark">
-  <div class="titulo">
-    <h2>Conheça o Meu Trabalho</h2>
-  </div>
-
-  <div class="manifesto">
-    <p>
-      A CoreDesign nasce para transformar marcas comuns em marcas memoráveis.
-      Aqui o design não é decoração. É posicionamento. É estratégia. É crescimento.
-    </p>
+    <a href="#manifesto" class="btn">Explorar Portfólio</a>
   </div>
 </section>
 
 <!-- MANIFESTO -->
-<section class="dark">
+<section id="manifesto">
   <div class="titulo">
-    <h2>Manifesto</h2>
+    <h2>Manifesto Estratégico</h2>
   </div>
 
   <div class="cards">
@@ -204,50 +217,46 @@
 </section>
 
 <!-- MÉTODO CORE -->
-<section class="dark">
+<section>
   <div class="titulo">
     <h2>Método CORE</h2>
   </div>
 
-  <div class="cards">
-    <div class="card">C – Clareza de posicionamento</div>
-    <div class="card">O – Organização visual</div>
-    <div class="card">R – Relevância estratégica</div>
-    <div class="card">E – Expansão e conversão</div>
-  </div>
-</section>
-
-<!-- DIFERENCIAL -->
-<section class="dark">
-  <div class="titulo">
-    <h2>Diferencial Estratégico</h2>
-  </div>
-
-  <div class="manifesto">
-    <p>
-      Não criamos apenas artes visuais, construímos posicionamento estratégico.
-      Cada cor, cada tipografia e cada composição têm intenção.
-      O design nasce da essência da marca para gerar percepção, autoridade e resultado.
-    </p>
+  <div class="core-list">
+    <p><span>C</span> – Clareza de posicionamento</p>
+    <p><span>O</span> – Organização visual</p>
+    <p><span>R</span> – Relevância estratégica</p>
+    <p><span>E</span> – Expansão e conversão</p>
   </div>
 </section>
 
 <!-- CONTATO -->
-<section class="dark">
+<section class="contato">
   <div class="titulo">
     <h2>Contato</h2>
   </div>
 
-  <div class="manifesto">
-    <p>(79) 99819-7985</p>
-    <p>Transforme sua marca em uma marca memorável.</p>
-  </div>
+  <p class="numero">(79) 99819-7985</p>
+  <a class="btn">Quero construir minha marca</a>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <small>© 2026 Portfólio de Cayo — bycoredesign 2026-2030</small>
+<footer>
+© 2026 Portfólio Core Designer — bycoredesign 2026-2030
 </footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+cards.forEach(card=>observer.observe(card));
+</script>
 
 </body>
 </html>
